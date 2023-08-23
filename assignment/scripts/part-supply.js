@@ -39,33 +39,49 @@ let positives = [];
 let negatives = [];
 let zeroes = [];
 
-for (let i of supplyChanges) {
-  if (i > 0) {
-    positives.push(i);
-  } else if (i < 0) {
-    negatives.push(i);
+for (i = 0; i < supplyChanges.length; i++) {
+  if (supplyChanges[i] > 0) {
+    positives.push(supplyChanges[i]);
+  } else if (supplyChanges[i] < 0) {
+    negatives.push(supplyChanges[i]);
   } else {
-    zeroes.push(i);
+    zeroes.push(supplyChanges[i]);
   }
 }
 console.table(positives);
 console.table(negatives);
 console.table(zeroes);
 
-
-
 // ***** STRETCH GOALS *********************************************
 // 7. Rewrite the 'for' loop from #6 as a 'for...of' loop. Instead of 'positives',
 //    'negatives', and 'zeroes', create three new arrays named 'stretchPositives',
 //    'stretchNegatives', and 'stretchZeroes'. 
 console.log('7. Looping through supplyChanges to populate more arrays with positive, negative, and zero values:');
+let stretchPositives = [];
+let stretchNegatives =[];
+let stretchZeroes = [];
+
+for (let n of supplyChanges) {
+  if (n > 0) {
+    stretchPositives.push(n);
+  } else if (n < 0) {
+    stretchNegatives.push(n);
+  } else {
+    stretchZeroes.push(n);
+  }
+}
+
 
 
 // 8. Create a variable called 'totalParts' and assign it a value of 0.
 //    Then, write a loop that adds each value of the 'supplyChanges'
 //    array to the 'totalParts' variable.
 console.log('8. Looping through supplyChanges to calculate the sum:');
-
+let totalParts = 0;
+for (let value of supplyChanges) {
+  totalParts = (totalParts + value);
+}
+console.log(totalParts);
 
 // 9. We have a large stash of parts in our warehouse that we 
 //    need to box up and get ready for shipment. There are 572
@@ -79,7 +95,15 @@ console.log('8. Looping through supplyChanges to calculate the sum:');
 //    "left over," and the value of 'boxesFilled' should reflect
 //    how many boxes were filled.
 console.log('9. Filling boxes with a "while" loop');
+let parts = 572;
+let boxesFilled = 0;
 
+while (parts > 7) {
+  parts = (parts - 7);
+  boxesFilled++;
+}
+console.log(parts);
+console.log(boxesFilled);
 
 
 
