@@ -98,13 +98,12 @@ console.log('9. Filling boxes with a "while" loop');
 let parts = 572;
 let boxesFilled = 0;
 
-while (parts > 7) {
+while (parts >= 7) {
   parts = (parts - 7);
   boxesFilled++;
 }
-console.log(parts);
-console.log(boxesFilled);
-
+console.log('Boxes filled:', boxesFilled);
+console.log('Parts left over:', parts);
 
 
 // DO NOT MODIFY
